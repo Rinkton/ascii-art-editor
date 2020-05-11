@@ -25,21 +25,29 @@ namespace Editor
             int countY = count.CountAmountSymbolsInSting(Height - Menu.Height, model.Height);
 
             BL.FieldsGenerator generate = new BL.FieldsGenerator();
-            List<TextBox> listOfFields = generate.GenerateFields(0, Menu.Height, countX, countY, model);
-            visualizeFields(listOfFields);
-
-            for (int i = 0; i < 2; i++)
-            {
-                richTextBox1.Text = listOfFields[i].Location.X + " / " + listOfFields[i].Location.Y;
-            }
+            List<int[]> listOfFieldsLocation = generate.GenerateFields(0, Menu.Height, countX, countY, new int[2] { model.Width, model.Height });
+            visualizeFields(listOfFieldsLocation, model);
         }
 
-        public void visualizeFields(List<TextBox> listOfFields)
+        public void visualizeFields(List<int[]> listOfFieldsLocation, TextBox model)
         {
-            for (int i = 0; i < listOfFields.Count; i++)
+            
+            for (int i = 0; i < listOfFieldsLocation.Count; i++)
             {
-                Controls.Add(listOfFields[i]);
+                TextBox modelll = new TextBox
+                {
+                    BorderStyle = BorderStyle.None,
+                    Width = 13,
+                    Height = 13,
+                    MaxLength = 1,
+                    TextAlign = HorizontalAlignment.Center,
+                    Multiline = false
+                };
+                modelll.Location = new Point(50 + i / 10, 50 + i / 10);
+
+                Controls.Add(modelll);
             }
+            
         }
     }
 }

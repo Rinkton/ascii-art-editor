@@ -22,9 +22,9 @@ namespace Editor.BL
         /// <param name="countStrings">Количество строк на рабочем поле.</param>
         /// <param name="model">Модель, по принципу которой создаются все поля.</param>
         /// <returns>Список полей.</returns>
-        public List<TextBox> GenerateFields(int xStart, int yStart, int countSymbolsInString, int countStrings, TextBox model)
+        public List<int[]> GenerateFields(int xStart, int yStart, int countSymbolsInString, int countStrings, int[] modelSize)
         {
-            List<TextBox> listOfFields = new List<TextBox>();
+            List<int[]> listOfFieldsLocation = new List<int[]>();
 
             // Для того, чтобы распространять поля далее.
             int x = 0;
@@ -34,17 +34,16 @@ namespace Editor.BL
             {
                 for (int j = 0; j < countSymbolsInString; j++)
                 {
-                    model.Location = new Point(xStart + x, yStart + y);
-                    listOfFields.Add(new TextBox());
+                    listOfFieldsLocation.Add(new int[2] { xStart + x, yStart + y });
 
-                    x += model.Width;
+                    x += modelSize[0];
                 }
 
-                y += model.Height;
+                y += modelSize[1];
                 x = 0;
             }
 
-            return listOfFields;
+            return listOfFieldsLocation;
         }
         //Здесь по идее больше одного метода не должно быть, судя по описанию метода выше
     }
