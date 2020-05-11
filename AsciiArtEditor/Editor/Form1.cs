@@ -16,24 +16,21 @@ namespace Editor
         {
             InitializeComponent();
 
-            BL.ModelCreater modelling = new BL.ModelCreater();
-            TextBox model = modelling.GetModel();
-
             BL.Accountant count = new BL.Accountant();
-            const int borders = 16; // Сумма левой и правой границы окна.
-            int countX = count.CountAmountSymbolsInSting(Width - borders, model.Width);
-            int countY = count.CountAmountSymbolsInSting(Height - Menu.Height, model.Height);
+            const int bordersX = 16; // Сумма левой и правой границы окна.
+            const int bordersY = 35; // Сумма верхней и нижней границы окна.
+            int countX = count.CountAmountSymbolsInSting(Width - bordersX, BL.ModelAdjuster.ModelSizeX);
+            int countY = count.CountAmountSymbolsInSting(Height - (Menu.Height + bordersY), BL.ModelAdjuster.ModelSizeY);
 
             BL.FieldsGenerator generate = new BL.FieldsGenerator();
-            List<TextBox> listOfFields = generate.GenerateFields(0, Menu.Height, countX, countY, model);
+            List<TextBox> listOfFields = generate.GenerateFields(0, Menu.Height, countX, countY);
             visualizeFields(listOfFields);
-
-            for (int i = 0; i < 2; i++)
-            {
-                richTextBox1.Text = listOfFields[i].Location.X + " / " + listOfFields[i].Location.Y;
-            }
         }
 
+        /// <summary>
+        /// Визуализирует все поля из списка.
+        /// </summary>
+        /// <param name="listOfFields">Список полей.</param>
         public void visualizeFields(List<TextBox> listOfFields)
         {
             for (int i = 0; i < listOfFields.Count; i++)

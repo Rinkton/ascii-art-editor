@@ -22,8 +22,10 @@ namespace Editor.BL
         /// <param name="countStrings">Количество строк на рабочем поле.</param>
         /// <param name="model">Модель, по принципу которой создаются все поля.</param>
         /// <returns>Список полей.</returns>
-        public List<TextBox> GenerateFields(int xStart, int yStart, int countSymbolsInString, int countStrings, TextBox model)
+        public List<TextBox> GenerateFields(int xStart, int yStart, int countSymbolsInString, int countStrings)
         {
+            ModelAdjuster adjust = new ModelAdjuster();
+
             List<TextBox> listOfFields = new List<TextBox>();
 
             // Для того, чтобы распространять поля далее.
@@ -34,13 +36,14 @@ namespace Editor.BL
             {
                 for (int j = 0; j < countSymbolsInString; j++)
                 {
-                    model.Location = new Point(xStart + x, yStart + y);
-                    listOfFields.Add(new TextBox());
+                    TextBox field = adjust.GetModel(new TextBox());
+                    field.Location = new Point(xStart + x, yStart + y);
+                    listOfFields.Add(field);
 
-                    x += model.Width;
+                    x += ModelAdjuster.ModelSizeX;
                 }
 
-                y += model.Height;
+                y += ModelAdjuster.ModelSizeY;
                 x = 0;
             }
 

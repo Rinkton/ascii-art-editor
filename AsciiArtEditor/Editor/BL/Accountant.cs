@@ -28,6 +28,11 @@ namespace Editor.BL
             return Convert.ToInt32(amountSymbolsInString);
         }
 
+        /// <summary>
+        /// Проверяет целое число или дробное.
+        /// </summary>
+        /// <param name="number">Число, которое надо проверить.</param>
+        /// <returns></returns>
         private bool isWholeNumber(float number)
         {
             return number == Convert.ToInt32(number) ? true : false;

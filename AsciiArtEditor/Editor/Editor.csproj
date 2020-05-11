@@ -48,7 +48,7 @@
   <ItemGroup>
     <Compile Include="BL\Accountant.cs" />
     <Compile Include="BL\FieldsGenerator.cs" />
-    <Compile Include="BL\ModelCreater.cs" />
+    <Compile Include="BL\ModelAdjuster.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -36,8 +36,6 @@
             this.сохранитьКакToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.загрузитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.информацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.DeleteIt = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.Menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,34 +99,11 @@
             this.информацияToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
             this.информацияToolStripMenuItem.Text = "Об авторе";
             // 
-            // DeleteIt
-            // 
-            this.DeleteIt.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.DeleteIt.BackColor = System.Drawing.SystemColors.MenuText;
-            this.DeleteIt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DeleteIt.Location = new System.Drawing.Point(415, 10);
-            this.DeleteIt.Margin = new System.Windows.Forms.Padding(1);
-            this.DeleteIt.MaxLength = 1;
-            this.DeleteIt.Name = "DeleteIt";
-            this.DeleteIt.Size = new System.Drawing.Size(13, 13);
-            this.DeleteIt.TabIndex = 13;
-            this.DeleteIt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(495, 36);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(96, 168);
-            this.richTextBox1.TabIndex = 14;
-            this.richTextBox1.Text = "";
-            // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 406);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.DeleteIt);
+            this.ClientSize = new System.Drawing.Size(624, 441);
             this.Controls.Add(this.Menu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.KeyPreview = true;
@@ -152,8 +127,6 @@
         private System.Windows.Forms.ToolStripMenuItem информацияToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem сохранитьКакToolStripMenuItem;
-        private System.Windows.Forms.TextBox DeleteIt;
-        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
 
