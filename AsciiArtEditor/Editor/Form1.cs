@@ -88,7 +88,14 @@ namespace Editor
             {
                 for (int i = 0; i < changedListOfSymbolsInDocument.Count; i++)
                 {
-                    listOfFields[i].Text = Convert.ToString(changedListOfSymbolsInDocument[i]);
+                    if (changedListOfSymbolsInDocument[i] != ' ')
+                    {
+                        listOfFields[i].Text = Convert.ToString(changedListOfSymbolsInDocument[i]);
+                    }
+                    else
+                    {
+                        listOfFields[i].Text = "";
+                    }
                 }
             }
             else 
