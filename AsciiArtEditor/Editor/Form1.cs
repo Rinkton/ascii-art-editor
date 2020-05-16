@@ -103,5 +103,11 @@ namespace Editor
                 MessageBox.Show("Количество символов в выбранном вами файле превышает максимальное.", "Ошибка");
             }
         }
+
+        private void информацияToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            About about = new About();
+            about.Show();
+        }
     }
 }
