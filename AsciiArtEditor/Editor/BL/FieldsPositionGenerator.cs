@@ -11,7 +11,7 @@ namespace Editor.BL
     /// <summary>
     /// Задача: Сгенерировать все поля при старте.
     /// </summary>
-    class FieldsGenerator
+    class FieldsPositionGenerator
     {
         /// <summary>
         /// Генерирует позиции полей, исполняет единственную обязанность всего класса.
